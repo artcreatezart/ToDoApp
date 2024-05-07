@@ -5,5 +5,45 @@
 }
 
 body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+#todoContainer {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(41, 1, 1, 0.1);
+    padding: 30px;
+
+}
+
+#todoList {
+    list-style-type: none;
+}
+
+#todoInput[type="text"] {
+    padding: 10px 10px;
+}
+
+input[type="checkbox"] {
+    margin: 10px ;
+}
+
+#addButton {
     background-color: pink;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+#addButton:hover {
+    background-color: palevioletred;
 }

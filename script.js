@@ -1,6 +1,6 @@
 function addTodo() {
     // Get the input element and its value
-    const input = document.getElementById("todo-input");
+    const input = document.getElementById("todoInput");
     // Get value and trim whitespace from start/end
     const inputValue = input.value.trim();
 
@@ -8,7 +8,7 @@ function addTodo() {
     if (inputValue !== "") {
         // Create a new list item
         // Get the unorder list:
-        const todoList = document.getElementById("todo-list");
+        const todoList = document.getElementById("todoList");
         // Create a list item using createElement:
         const li = document.createElement("li");
         // Create a checkbox using createElement:
@@ -28,3 +28,25 @@ function addTodo() {
         alert("Please enter a valid todo item");
     }
 }
+
+// Add event listener to the "Add button" to add new item:
+document.getElementById('addButton').addEventListener("click", addTodo);
+
+// Event listener to mark todo items as completed
+
+// onchange event on the todo-list item:
+document.getElementById("todoList").addEventListener("change", function(event) {
+    // check if the event trigger was a checkbox 
+    if (event.target.type === "checkbox") {
+        // Get the parent list item of the checkbox
+        const listItem = event.target.parentNode;
+        // check if the checkbox is checked or not:
+        if (event.target.checked) {
+            // Apply line-through style when the checkbox is checked:
+            listItem.style.textDecoration = "line-through";
+        } else {
+            // Remove the line-through when unchecked:
+            listItem.style.textDecoration = "none";
+        }
+    }
+})
